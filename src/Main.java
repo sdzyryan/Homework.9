@@ -39,18 +39,13 @@ public class Main {
         int[] arr = generateRandomArray();
 
         int minSum = 201_000;
-        for (int i = 0; i < arr.length; i++) {
-            final int current = arr[i];
-            if (current < minSum) {
-                minSum = current;
-            }
-        }
-
         int maxSum = 99_000;
         for (int i = 0; i < arr.length; i++) {
-            final int current = arr[i];
-            if (current > maxSum) {
-                maxSum = current;
+
+            if (arr[i] < minSum) {
+                minSum = arr[i];
+            } else if (arr[i] > maxSum) {
+                maxSum = arr[i];
             }
         }
 
